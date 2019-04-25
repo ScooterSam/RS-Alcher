@@ -12,6 +12,7 @@ THIS IS NOT A BOT, it is a simple script that controls your mouse and jagex will
  - You must disabled `Stretched Mode` and `Interface Styles` if you have this enabled
  - You must put your game into `Fixed Mode`
  - You must put your game into the highest brightness
+ - In `RuneLite Settings` disabled `Show display name in title`. The script will not be able to run without this.
  
 # Instructions:
  - Open your terminal and navigate to the directory you wish to install the script
@@ -31,3 +32,9 @@ Once you have done this, the script will ask for your password. This feels kinda
 The script will know when you have logged out of RuneScape, and if you provide a password, it will go through the login phase.
 
 If you are worried about providing your password, I understand. You can enabled two factor authentication on your RuneScape account, which makes the use of your password useless without two factor. Just ensure you login to the account once on your device before running the script, it will not be able to handle two factor authentication.
+
+# Thanks
+Thanks for using my script, be safe and don't go too crazy.
+
+# Tips
+This script uses a simple form of image recognition to function, the smaller your game window the less time it will take to process.
