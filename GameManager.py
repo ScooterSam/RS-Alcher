@@ -1,13 +1,10 @@
 import pyautogui
 import random
-import turtle
-import pygame
-import os
 import math
 from random import randint, uniform
 import time
 import sys
-import win32gui, win32con, win32api
+import win32gui
 from pyclick import HumanClicker
 
 

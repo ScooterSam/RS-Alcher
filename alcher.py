@@ -1,10 +1,7 @@
-import pyautogui
 import win32gui
-import pprint
 import sys
 import keyboard
 import os
-import pyautogui
 from GameManager import GameManager
 
 # The Game manager(just extracts some logic from here)
