@@ -10,7 +10,7 @@ THIS IS NOT A BOT, it is a simple script that controls your mouse and jagex will
 # Requirements
  - You **must** use `RuneLite` client 
  - You must disabled `Stretched Mode` and `Interface Styles` if you have this enabled
- - You must put your game into `Fixed Mode`
+ - You must put your game into `Stretched Mode` with the window pretty small(performance)
  - You must put your game into the highest brightness
  - In `RuneLite Settings` disable `Show display name in title`. The script will not be able to run without this.
  
