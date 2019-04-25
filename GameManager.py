@@ -8,6 +8,7 @@ from random import randint, uniform
 import time
 import sys
 import win32gui, win32con, win32api
+from pyclick import HumanClicker
 
 
 class GameManager(object):
@@ -138,8 +139,40 @@ class GameManager(object):
     def move_cursor_to(self, x, y):
         xx = self.gameRect[0] + x
         yy = self.gameRect[1] + y
-        pyautogui.moveTo(xx, yy, self.mouse_travel_time(xx, yy), tween=pyautogui.easeInOutQuint)
+        #pyautogui.moveTo(xx, yy, self.mouse_travel_time(xx, yy), tween=pyautogui.easeInOutQuint)
+        self.move_random(xx, yy)
         pyautogui.click(None, None, 1)
+
+    def generate_steps(self, destination_x, destination_y):
+        current_x, current_y = pyautogui.position()  # Current Position
+
+        stepCount = random.randint(5, 20)
+        xDistance = destination_x - current_x
+        yDistance = destination_y - current_y
+
+        steps = [[current_x, current_y]]
+
+        for i in range(stepCount):
+            noiseAmount = ((random.randint(10, 1000) / 100) * (-1 if random.randint(0, 100) < 50 else 1))
+            steps.append([
+                (current_x + ((xDistance / stepCount) * i) + (noiseAmount if xDistance < yDistance else 0)),
+                (current_y + ((yDistance / stepCount) * i) + (noiseAmount if xDistance >= yDistance else 0))
+            ])
+
+        steps.append([destination_x, destination_y])
+
+        return steps
+
+    def move_random(self, x, y):
+        # steps_to_move = self.generate_steps(x, y)
+        # for step in steps_to_move:
+        #     pyautogui.moveTo(step[0], step[1], 0,tween=pyautogui.easeInOutQuint)
+
+        # initialize HumanClicker object
+        hc = HumanClicker()
+        hc.move((x, y), self.mouse_travel_time(x, y))
+
+        #pyautogui.click(None, None, 1)
 
     # def draw_box(self, x, y, w, h):
 # win32gui.SelectObject(self.hdc, win32gui.GetStockObject('DC_BRUSH'))
